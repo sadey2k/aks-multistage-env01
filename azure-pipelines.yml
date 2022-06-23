@@ -25,6 +25,9 @@ steps:
 - task: TerraformCLI@0
   inputs:
     command: 'validate'
-    allowTelemetryCollection: true
+    allowTelemetryCollection: false
   
-
+- task: TerraformCLI@0
+  inputs:
+    command: 'plan'
+    allowTelemetryCollection: false
