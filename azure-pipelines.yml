@@ -19,7 +19,7 @@ steps:
     backendAzureRmResourceGroupName: 'aks-storage-RG'
     backendAzureRmStorageAccountName: 'tfstate8018'
     backendAzureRmContainerName: 'tfstate'
-    backendAzureRmKey: 'dhuPiY4MEh1HI3fRBp77Dkabg2dnyq5VYGSOF2UAZgZYixtY7uQQ5LueaVaSBtfWTQ1cbm25kzb9+AStQvS50g=='
+    backendAzureRmKey: 'terraform.tfstate'
     allowTelemetryCollection: true
 
 - task: TerraformCLI@0
