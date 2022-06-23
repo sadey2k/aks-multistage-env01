@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+#- master
+
+pool: 'TestAgentPool'
+  #vmImage: 
+
+steps:
+- task: TerraformCLI@0
+  inputs:
+    command: 'init'
+    backendType: 'azurerm'
+    backendServiceArm: 'dev-sp'
+    backendAzureRmSubscriptionId: '375b0336-a057-4ecb-b117-e02bf5b9a1a9'
+    backendAzureRmResourceGroupName: 'aks-storage-RG'
+    backendAzureRmStorageAccountName: 'tfstate8018'
+    backendAzureRmContainerName: 'tfstate'
+    backendAzureRmKey: 'dhuPiY4MEh1HI3fRBp77Dkabg2dnyq5VYGSOF2UAZgZYixtY7uQQ5LueaVaSBtfWTQ1cbm25kzb9+AStQvS50g=='
+    allowTelemetryCollection: true
+
+- task: TerraformCLI@0
+  inputs:
+    command: 'validate'
+    allowTelemetryCollection: true
+  
+
